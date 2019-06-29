@@ -6,8 +6,12 @@ import { Component } from '@angular/core';
     <div>
       <h1>Upcoming Angular Events</h1>
       <hr />
-      <event-thumbnail #thumbnail [event]='events' (eventClick)='handleEventClick($event)'></event-thumbnail>
-      <h3>{{thumbnail.someProperty}}</h3>
+      <div class="row">
+        <div class="col-md-5" *ngFor='let event of events'>
+          <event-thumbnail #thumbnail  
+            (eventClick)='handleEventClick($event)'></event-thumbnail>
+        </div>
+      </div>
       <button class="btn btn-primary" (click)="thumbnail.logFoo()" >Log me some foo</button>
     </div>
   `

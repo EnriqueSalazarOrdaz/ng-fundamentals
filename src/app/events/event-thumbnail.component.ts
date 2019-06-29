@@ -1,14 +1,14 @@
-import { Component, Input, Output, EventEmitter, } from "@angular/core";
+import { Component, Input, Output, EventEmitter, } from '@angular/core';
 
 @Component({
   selector: 'event-thumbnail',
   template: `
 
-    <div class="well hoverwell thumbnail">
-      <h2>{{ event.name }}</h2>
-      <div>Date: {{ event.date }}</div>
-      <div>Time: {{ event.time }}</div>
-      <div>Price: {{ event.price | currency }}</div>
+    <div class="well hoverwell thumbnail" >
+      <h2>{{ event?.name }}</h2>
+      <div>Date: {{ event?.date }}</div>
+      <div>Time: {{ event?.time }}</div>
+      <div>Price: {{ event?.price | currency }}</div>
       <div>
         <span>Location: {{ event.location.address }}</span>
         <span>&nbsp;</span>
@@ -17,6 +17,12 @@ import { Component, Input, Output, EventEmitter, } from "@angular/core";
       <button class="btn btn-primary" (click)="ClickMe()">Click me!</button>
     </div>
   `
+
+  , styles: [`
+    .thumbnail { min-height: 250px; }
+    .pad-left { margin-left: 10px; }
+    .well div { color: #bbb; }
+  `]
 })
 
 export class EventThumbnailComponent {
