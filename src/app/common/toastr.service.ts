@@ -1,8 +1,8 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 declare let toastr;
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class ToastrService {
   constructor() {}

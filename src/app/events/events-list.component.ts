@@ -5,15 +5,15 @@ import { ToastrService } from '../common/toastr.service';
 
 
 @Component({
-  selector: 'events-list',
+  selector: 'app-events-list',
   template: `
     <div>
       <h1>Upcoming Angular Events</h1>
       <hr />
       <div class="row">
         <div class="col-md-5" *ngFor='let event of events'>
-          <event-thumbnail #thumbnail [event]='event'
-            (click)='handleThumbnailClick(event.name)'></event-thumbnail>
+          <app-event-thumbnail #thumbnail [event]='event'
+            (click)='handleThumbnailClick(event.name)'></app-event-thumbnail>
         </div>
       </div>
       <button class="btn btn-primary" (click)="thumbnail.logFoo()" >Log me some foo</button>

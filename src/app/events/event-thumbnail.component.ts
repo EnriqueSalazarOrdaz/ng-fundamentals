@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, } from '@angular/core';
 
 @Component({
-  selector: 'event-thumbnail',
+  selector: 'app-event-thumbnail',
   template: `
 
     <div [routerLink]="['/events',event.id]" class="well hoverwell thumbnail" >
@@ -33,7 +33,7 @@ import { Component, Input, Output, EventEmitter, } from '@angular/core';
 export class EventThumbnailComponent {
   @Input() event: any;
   @Output() eventClick = new EventEmitter();
-  someProperty: string = 'some value2';
+  someProperty = 'some value2';
 
   ClickMe() {
     this.eventClick.emit(this.event.name);

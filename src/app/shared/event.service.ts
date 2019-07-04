@@ -1,22 +1,3 @@
-import { Injectable } from '@angular/core';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class EventService {
-
-  constructor() { }
-
-  getEvents() {
-    return EVENTS;
-  }
-
-  getEvent(id: number) {
-    return EVENTS.find(event => event.id === id);
-  }
-}
-
 const EVENTS = [
   {
     id: 1,
@@ -327,3 +308,25 @@ const EVENTS = [
     ]
   }
 ];
+
+
+import { Injectable } from '@angular/core';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+
+
+export class EventService {
+
+  constructor() { }
+
+  getEvents() {
+    return EVENTS;
+  }
+
+  getEvent(id: number) {
+    return EVENTS.find(event => event.id === id);
+  }
+}
