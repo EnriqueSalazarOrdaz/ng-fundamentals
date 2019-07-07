@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
     <app-nav-bar></app-nav-bar>
     <router-outlet></router-outlet>
   `
-
 })
+
 export class EventsAppComponent {
   title = 'app';
 }
