@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { CreateEventComponent } from './events/create-event/create-event.component';
 import { Error404Component } from './errors/error404/error404.component';
+import { EventService } from './shared/event.service';
 
 
 @NgModule({
@@ -26,7 +27,14 @@ import { Error404Component } from './errors/error404/error404.component';
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [{ provide: 'canDeactiveCreateEvent', useValue: checkDirtyState }],
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
+
+export function checkDirtyState(component: CreateEventComponent) {
+  if (component.isDirty) {
+    return window.confirm('You have not saved this event. do you really want to cancel');
+  }
+  return true;
+}
