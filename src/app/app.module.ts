@@ -11,6 +11,7 @@ import { appRoutes } from './routes';
 import { CreateEventComponent } from './events/create-event/create-event.component';
 import { Error404Component } from './errors/error404/error404.component';
 import { EventService } from './shared/event.service';
+import { ProfileComponent } from './user/profile.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { EventService } from './shared/event.service';
     NavBarComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    Error404Component
+    Error404Component,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
